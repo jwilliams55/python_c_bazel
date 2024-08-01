@@ -1,5 +1,5 @@
 py_test(
     name = "add_test",
     srcs = ["add_test.py"],
-    deps = ["//c_library:basic_lib"],
+    deps = ["//c_library:basic_lib_py"],
 )

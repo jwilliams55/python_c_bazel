@@ -2,7 +2,7 @@ package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "backend",
-    hdrs = ["add.h"],
+    srcs = ["add.c"],
     deps = [
         "@rules_python//python/cc:current_py_cc_headers",
     ],
@@ -10,8 +10,14 @@ cc_library(
 
 cc_shared_library(
     name = "basic_lib",
-    shared_lib_name = "_basic.so",
+    shared_lib_name = "basic.so",
     deps = [
         ":backend",
     ],
+)
+
+py_library(
+    name = "basic_lib_py",
+    data = [":basic_lib"],
+    imports = [":basic_lib"],
 )

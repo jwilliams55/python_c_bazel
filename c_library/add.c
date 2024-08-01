@@ -1,11 +1,9 @@
-#pragma once
-
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 
+
 static PyObject *add_module(PyObject *self, PyObject *args) {
   int num1, num2;
-  int retval;
 
   if (!PyArg_ParseTuple(args, "ii", &num1, &num2)) {
     return NULL;
